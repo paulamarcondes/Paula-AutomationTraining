@@ -1,0 +1,119 @@
+Feature: Product Search
+  Scenario: Search for a product by name
+    Given User is on the homepage
+    When User enters a product name in the search bar and clicks search
+    Then Product results are displayed on the search results page
+
+Feature: Product Details
+  Scenario: View product details
+    Given User is on a product page
+    When User clicks on the product image
+    Then Product details are displayed, including price and description
+
+Feature: Cart Functionality
+  Scenario: Add product to cart
+    Given User is on a product page
+    When User clicks the "Add to Cart" button
+    Then Product is added to cart and cart count is updated
+
+Feature: Cart Functionality
+  Scenario: Remove product from cart
+    Given User is on the cart page with a product in the cart
+    When User clicks the "Remove" button
+    Then Product is removed from cart and cart count is updated
+
+Feature: Checkout
+  Scenario: Proceed to checkout
+    Given User is on the cart page with a product in the cart
+    When User clicks the "Proceed to Checkout" button
+    Then User is redirected to the checkout page
+
+Feature: Product Variations
+  Scenario: Select product variation
+    Given User is on a product page with variations (e.g., size, color)
+    When User selects a variation
+    Then Product details are updated to reflect the selected variation
+
+Feature: Product Reviews
+  Scenario: View product reviews
+    Given User is on a product page with reviews
+    When User clicks on the "Reviews" tab
+    Then Product reviews are displayed
+
+Feature: Product Comparison
+  Scenario: Compare products
+    Given User is on a product page with a "Compare" button
+    When User clicks the "Compare" button
+    Then Product comparison page is displayed with the selected products
+
+Feature: Coupon Codes
+  Scenario: Apply coupon code
+    Given User is on the cart page with a coupon code
+    When User enters the coupon code and clicks "Apply"
+    Then Coupon code is applied and discount is reflected in the cart total
+
+Feature: Shipping Options
+  Scenario: Select shipping option
+    Given User is on the checkout page
+    When User selects a shipping option
+    Then Shipping cost is updated and reflected in the order total
+
+Feature: Payment Options
+  Scenario: Select payment option
+    Given User is on the checkout page
+    When User selects a payment option
+    Then Payment option is updated and reflected in the order total
+
+Feature: Order Summary
+  Scenario: View order summary
+    Given User is on the checkout page
+    When User clicks on the "Order Summary" link
+    Then Order summary is displayed, including products, shipping, and payment details
+
+Feature: Guest Checkout
+  Scenario: Checkout as a guest
+    Given User is on the checkout page
+    When User selects the "Guest Checkout" option
+    Then User is redirected to the guest checkout page
+
+Feature: Account Creation
+  Scenario: Create an account during checkout
+    Given User is on the checkout page
+    When User selects the "Create an Account" option
+    Then User is redirected to the account creation page
+
+Feature: Order History
+  Scenario: View order history
+    Given User is logged in and on the account page
+    When User clicks on the "Order History" link
+    Then Order history is displayed, including past orders and order details
+
+Feature: Product Recommendations
+  Scenario: View product recommendations
+    Given User is on a product page
+    When User clicks on the "Recommended Products" link
+    Then Product recommendations are displayed
+
+Feature: Product Filtering
+  Scenario: Filter products by category
+    Given User is on a product category page
+    When User selects a filter option (e.g., price, brand)
+    Then Products are filtered and displayed according to the selected filter
+
+Feature: Product Sorting
+  Scenario: Sort products by price
+    Given User is on a product category page
+    When User selects a sort option (e.g., price, name)
+    Then Products are sorted and displayed according to the selected sort option
+
+Feature: Search Results Filtering
+  Scenario: Filter search results by category
+    Given User is on the search results page
+    When User selects a filter option (e.g., price, brand)
+    Then Search results are filtered and displayed according to the selected filter
+
+Feature: Search Results Sorting
+  Scenario: Sort search results by price
+    Given User is on the search results page
+    When User selects a sort option (e.g., price, name)
+    Then Search results are sorted and displayed according to the selected sort option

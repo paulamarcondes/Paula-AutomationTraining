@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.2 on win32)" generated="2025-03-06T14:50:43.878453" rpa="false" schemaversion="5">
+<suite id="s1" name="01.Account" source="C:\Users\paula.marcondes\Documents\Paula-AutomationTraining\01.Account.robot">
+<test id="s1-t1" name="01.06 Scenario: View order history" line="41">
+<kw name="Common Setup" owner="Keywords" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-03-06T14:50:44.341229" level="INFO">Opening browser 'chrome' to base url 'https://ecommerce-playground.lambdatest.io/'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-03-06T14:50:44.341049" elapsed="5.144480"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-03-06T14:50:49.485720" elapsed="0.061006"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-03-06T14:50:49.547086" level="INFO">Common setup executed</msg>
+<arg>Common setup executed</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-03-06T14:50:49.546939" elapsed="0.000205"/>
+</kw>
+<status status="PASS" start="2025-03-06T14:50:44.340364" elapsed="5.206857"/>
+</kw>
+<kw name="Given The user is already logged in" owner="Keywords">
+<kw name="The user is on the login page" owner="Keywords">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-06T14:50:49.549017" level="INFO">Clicking element 'css=#widget-navbar-217834 &gt; ul &gt; li:nth-child(6) &gt; a &gt; div &gt; span'.</msg>
+<arg>${MyAccount}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-06T14:50:49.548634" elapsed="2.493873"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${LoginPage}</arg>
+<arg>timeout=30s</arg>
+<arg>error=User can't access to login page</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-06T14:50:52.042813" elapsed="0.010634"/>
+</kw>
+<status status="PASS" start="2025-03-06T14:50:49.548237" elapsed="2.505335"/>
+</kw>
+<kw name="The user enters valid credentials" owner="Keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-03-06T14:50:52.054163" level="INFO">Typing text 'figay26843@egvoo.com' into text field 'css=#input-email'.</msg>
+<arg>${EmailField}</arg>
+<arg>${Email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-06T14:50:52.053991" elapsed="0.108248"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2025-03-06T14:50:52.163042" level="INFO">Typing password into text field 'css=#input-password'.</msg>
+<msg time="2025-03-06T14:50:52.186826" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${PasswordField}</arg>
+<arg>${Password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-06T14:50:52.162649" elapsed="0.079772"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-06T14:50:52.243013" level="INFO">Clicking element 'css=input.btn.btn-primary'.</msg>
+<arg>${LoginButton}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-06T14:50:52.242706" elapsed="2.123698"/>
+</kw>
+<arg>${ValidEmail}</arg>
+<arg>${ValidPassword}</arg>
+<status status="PASS" start="2025-03-06T14:50:52.053717" elapsed="2.312773"/>
+</kw>
+<kw name="The user is logged in" owner="Keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${AccountPage}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-06T14:50:54.366796" elapsed="0.021017"/>
+</kw>
+<status status="PASS" start="2025-03-06T14:50:54.366611" elapsed="0.021342"/>
+</kw>
+<status status="PASS" start="2025-03-06T14:50:49.547728" elapsed="4.840268"/>
+</kw>
+<kw name="When The user navigates to the order history page" owner="Keywords">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-06T14:50:54.388991" level="INFO">Clicking element 'xpath=//a[contains(text(), 'Order History')]'.</msg>
+<arg>${OrderHistory}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-06T14:50:54.388738" elapsed="1.783979"/>
+</kw>
+<status status="PASS" start="2025-03-06T14:50:54.388439" elapsed="1.784502"/>
+</kw>
+<kw name="Then All past orders are displayed" owner="Keywords">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>text=Order History</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-06T14:50:56.173692" elapsed="0.014663"/>
+</kw>
+<status status="PASS" start="2025-03-06T14:50:56.173341" elapsed="0.015098"/>
+</kw>
+<kw name="Common Teardown" owner="Keywords" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-03-06T14:50:56.188910" elapsed="2.162779"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-03-06T14:50:58.352590" level="INFO">Common teardown executed</msg>
+<arg>Common teardown executed</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-03-06T14:50:58.352194" elapsed="0.000541"/>
+</kw>
+<status status="PASS" start="2025-03-06T14:50:56.188722" elapsed="2.164227"/>
+</kw>
+<status status="PASS" start="2025-03-06T14:50:44.339733" elapsed="14.013695"/>
+</test>
+<doc>This file contains the Test Cases and Scenarios related to User Accounts, for practice purposes.</doc>
+<status status="PASS" start="2025-03-06T14:50:43.879836" elapsed="14.475805"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="01.Account" id="s1" pass="1" fail="0" skip="0">01.Account</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

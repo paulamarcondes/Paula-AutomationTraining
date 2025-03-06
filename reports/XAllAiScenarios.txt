@@ -1,0 +1,164 @@
+*** Comments ***
+This file contains a list of scenarios for various features of an e-commerce application.
+This list is used for exercisign testing automation and validation purposes.
+Site used for this matter: https://www.davidyurman.com/
+
+
+
+*** Test Cases ***
+
+Feature: User Login
+Scenario: Successful login with valid credentials
+Given the user is on the login page
+When the user enters valid credentials
+Then the user is redirected to the homepage
+
+Feature: User Registration
+Scenario: Successful registration with valid details
+Given the user is on the registration page
+When the user enters valid registration details
+Then the user receives a confirmation message
+
+Feature: Product Search
+Scenario: Search for a product by name
+Given the user is on the homepage
+When the user searches for "laptop"
+Then the search results display products related to "laptop"
+
+Feature: Product Details
+Scenario: View product details
+Given the user is on the search results page
+When the user clicks on a product
+Then the product details page is displayed
+
+Feature: Add to Cart
+Scenario: Add a product to the shopping cart
+Given the user is on the product details page
+When the user clicks "Add to Cart"
+Then the product is added to the shopping cart
+
+Feature: View Cart
+Scenario: View items in the shopping cart
+Given the user has added products to the cart
+When the user navigates to the cart page
+Then the cart displays all added products
+
+Feature: Remove from Cart
+Scenario: Remove a product from the shopping cart
+Given the user has products in the cart
+When the user removes a product
+Then the product is no longer in the cart
+
+Feature: Checkout Process
+Scenario: Proceed to checkout
+Given the user has products in the cart
+When the user clicks "Checkout"
+Then the checkout page is displayed
+
+Feature: Payment
+Scenario: Successful payment with valid credit card
+Given the user is on the payment page
+When the user enters valid credit card details
+Then the payment is processed successfully
+
+Feature: Order Confirmation
+Scenario: Receive order confirmation
+Given the payment is successful
+When the order is placed
+Then the user receives an order confirmation email
+
+Feature: User Profile Update
+Scenario: Update user profile information
+Given the user is logged in
+When the user updates their profile information
+Then the changes are saved successfully
+
+Feature: Password Reset
+Scenario: Reset password with valid email
+Given the user is on the password reset page
+When the user enters a valid email address
+Then a password reset link is sent to the email
+
+Feature: Product Review
+Scenario: Submit a product review
+Given the user has purchased a product
+When the user submits a review
+Then the review is displayed on the product page
+
+Feature: Wishlist
+Scenario: Add a product to the wishlist
+Given the user is on the product details page
+When the user clicks "Add to Wishlist"
+Then the product is added to the wishlist
+
+Feature: Apply Discount Code
+Scenario: Apply a valid discount code
+Given the user is on the checkout page
+When the user enters a valid discount code
+Then the discount is applied to the total price
+
+Feature: Order History
+Scenario: View order history
+Given the user is logged in
+When the user navigates to the order history page
+Then all past orders are displayed
+
+Feature: Product Filtering
+Scenario: Filter products by category
+Given the user is on the product listing page
+When the user selects a category filter
+Then only products from that category are displayed
+
+Feature: Product Sorting
+Scenario: Sort products by price
+Given the user is on the product listing page
+When the user selects "Sort by Price"
+Then products are sorted by price in ascending order
+
+Feature: Multi-language Support
+Scenario: Change site language
+Given the user is on the homepage
+When the user selects a different language
+Then the site content is displayed in the selected language
+
+Feature: Multi-currency Support
+Scenario: Change currency
+Given the user is on the homepage
+When the user selects a different currency
+Then product prices are displayed in the selected currency
+
+Scenario: Verify adding a single product to the cart
+
+Given the user is on the product details page
+When the user clicks "Add to Cart"
+Then the product is added to the cart
+And the cart icon displays a quantity of 1
+Scenario: Verify adding multiple products to the cart
+
+Given the user is on the product details page
+When the user clicks "Add to Cart" for two different products
+Then both products are added to the cart
+And the cart icon displays a quantity of 2
+Scenario: Verify updating product quantity in the cart
+
+Given the user has a product in the cart
+When the user updates the product quantity to 3
+Then the cart reflects the updated quantity
+And the total price is updated accordingly
+Scenario: Verify removing a product from the cart
+
+Given the user has multiple products in the cart
+When the user removes one product
+Then the product is no longer in the cart
+And the cart icon displays the updated quantity
+Scenario: Verify cart is empty after removing all products
+
+Given the user has products in the cart
+When the user removes all products
+Then the cart is empty
+And the cart icon displays a quantity of 0
+Scenario: Verify cart retains products after logout and login
+
+Given the user has products in the cart
+When the user logs out and logs back in
+Then the cart still contains the previously added products
